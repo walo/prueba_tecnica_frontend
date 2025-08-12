@@ -1,0 +1,9 @@
+<div class="button-group">
+    @for (bnt of buttons; track $index) {
+        <app-button
+          [label]="bnt.label"
+          [disabled]="bnt.disabled ?? false"
+          (clicked)="onButtonClick($index)"
+        ></app-button>
+    }
+</div>

@@ -1,0 +1,12 @@
+<div class="item-list">
+    @if(loading$ | async) {
+        <div class="loading">Loading...</div>
+    }
+    @else {
+        @for (item of items$ | async; track $index) {
+            <app-card >
+                <app-button-group></app-button-group>
+            </app-card>
+        }
+    }
+</div>

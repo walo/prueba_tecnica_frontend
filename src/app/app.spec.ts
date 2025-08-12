@@ -1,8 +1,10 @@
 import { provideZonelessChangeDetection } from '@angular/core';
-import { TestBed } from '@angular/core/testing';
+import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { App } from './app';
 
 describe('App', () => {
+  let app: App;
+  let fixture: ComponentFixture<App>;
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [App],
@@ -11,15 +13,10 @@ describe('App', () => {
   });
 
   it('should create the app', () => {
-    const fixture = TestBed.createComponent(App);
-    const app = fixture.componentInstance;
+    fixture = TestBed.createComponent(App);
+    app = fixture.componentInstance;
     expect(app).toBeTruthy();
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(App);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, prueba_tecnica');
-  });
 });
+

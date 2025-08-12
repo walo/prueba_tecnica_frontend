@@ -1,0 +1,10 @@
+<form (submit)="onSearch(); $event.preventDefault()" class="search-form">
+  <app-input
+    [(value)]="searchTerm"
+    placeholder="Buscar..."
+  ></app-input>
+  <app-button
+    label="Buscar"
+    type="submit"
+  ></app-button>
+</form>

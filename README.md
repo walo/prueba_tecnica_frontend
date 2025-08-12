@@ -1,59 +1,64 @@
-# PruebaTecnica
+# Sistema de Gestión de Pruebas y Evaluaciones
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.5.
+## Introducción
 
-## Development server
+Este proyecto es un sistema web básico para la gestión de pruebas y evaluaciones, diseñado para facilitar la administración y realización de pruebas en un entorno educativo. El sistema cuenta con autenticación de usuarios y manejo de roles diferenciados: administrador y estudiante.
 
-To start a local development server, run:
+### Tecnologías utilizadas
 
-```bash
-ng serve
-```
+- Backend: Node.js
+- Frontend: Angular versión 20
+- Autenticación: JWT (JSON Web Tokens) y sesiones
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Sistema de Autenticación
 
-## Code scaffolding
+El sistema de autenticación está diseñado para garantizar la seguridad y el control de acceso mediante:
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- Registro de usuarios con asignación de rol (administrador o estudiante).
+- Inicio de sesión con validación de credenciales.
+- Generación de tokens JWT para mantener sesiones seguras.
+- Middleware para proteger rutas y asegurar que solo usuarios autenticados puedan acceder.
+- Autorización basada en roles para controlar el acceso a funcionalidades específicas según el tipo de usuario.
 
-```bash
-ng generate component component-name
-```
+## Funcionalidades Principales
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### Administrador
 
-```bash
-ng generate --help
-```
+- Crear, editar y eliminar usuarios.
+- Crear, editar y eliminar pruebas.
+- Añadir preguntas a cada prueba.
+- Consultar resultados de estudiantes.
 
-## Building
+### Estudiante
 
-To build the project run:
+- Iniciar sesión.
+- Consultar pruebas disponibles.
+- Resolver pruebas.
+- Ver puntajes obtenidos.
 
-```bash
-ng build
-```
+## Estructura General del Proyecto
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+- **Backend (Node.js):** Maneja la lógica del servidor, autenticación, autorización, gestión de usuarios, pruebas y resultados.
+- **Frontend (Angular 20):** Interfaz de usuario para administradores y estudiantes, con componentes para gestión de pruebas, resolución y visualización de resultados.
+- **Autenticación:** Implementada con JWT para sesiones seguras y middleware para protección de rutas y autorización por roles.
 
-## Running unit tests
+## Cómo Ejecutar el Proyecto
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+1. Clonar el repositorio.
+2. Instalar dependencias en backend y frontend:
+   - Backend: `npm install`
+   - Frontend: `npm install`
+3. Configurar variables de entorno necesarias (por ejemplo, secret JWT).
+4. Ejecutar el backend:
+   ```
+   npm start
+   ```
+5. Ejecutar el frontend:
+   ```
+   ng serve
+   ```
+6. Acceder a la aplicación desde el navegador en la URL indicada (por defecto `http://localhost:4200`).
 
-```bash
-ng test
-```
+---
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Esta documentación proporciona una visión general del sistema y sus funcionalidades principales para facilitar su uso y mantenimiento.
